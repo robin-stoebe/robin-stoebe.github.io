@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+WRITTEN BY: Robin Stoebe
+EMAIL: cstoebe@uci.edu
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Robin Stoebe">
+  <meta name="description" content="Portfolio for Robin Stoebe">
+   <!-- you would link to an external stylesheet here! -->
+   <script src="https://kit.fontawesome.com/b3a6d5b734.js" crossorigin="anonymous"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles.css">
+   <!-- you would also link to Bootstrap here! -->
+   <script src="scripts.js" defer></script>
+  <title> Home | Robin Stoebe </title>
+  <meta name = "viewport" content = "width-device-width, initial-scale = 1.0">
+  <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+</head>
+
+<body class = "container">
+  <header>
+    <nav id = "top-bar">
+        <img src = "/Users/gothyfox/Downloads/Portfolio-pics/RLogo.png" class = "logo" alt = "Robin's Logo">
+        <ul id = "sidemenu">
+          <li><a href = "index.html"> Home </a></li>
+          <li><a href = "about.html"> About Me </a></li>
+          <li><a href = "projects.html"> Projects </a></li>
+        </ul>
+        <button aria-label="Close menu" class="icon-button" onclick="closemenu()">
+            <span role="img" aria-hidden="true" class="fa-solid fa-circle-xmark"></span>
+        </button>
+        <button aria-label="Open menu" class="icon-button" onclick="openmenu()">
+            <span role="img" aria-hidden="true" class="fa-solid fa-bars"></span>
+        </button>
+    </nav>
+</header>
+
+  <div class="header-text">
+    <p>Innovative Software Engineer Student and UI/UX Designer</p>
+    <h1>Hi, I'm <span> Robin Stoebe</span><br> Welcome to my website!</h1>
+  </div>
+
+  <!-- quick about me-->
+  <div id = "about">
+    <div class = "row">
+      <div class = "about-col-1">
+        <img src = "/Users/gothyfox/Downloads/Portfolio-pics/IMG_7194.jpeg" alt = "Picture of Robin infront of a pretty post-rain background">
+      </div>
+      <div class = "about-col-2">
+        <h1 class = "sub-title"> Welcome!</h1>
+        <p style ="line-height: 1.5">
+         Hi! I'm a non-binary software engineering student at UC Irvine (they/them).<br>
+        🌈💻 I'm focusing on UI/UX development, acessibility, and front-end development. <br>
+        I'm aiming for a 2024 internship to launch my tech career. <br>
+        Let's create digital magic together! 🚀✨
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Featured Projects -->
+    <section id="featured-projects">
+      <div class="project-item">
+          <img src="/Users/gothyfox/Downloads/Portfolio-pics/fitness-photo-temp.jpeg" alt="Picture of a strong women outline flexing">
+          <div class="project-info">
+              <h3>Fitness-Free iOS App</h3>
+              <p>This fitness app is a comprehensive solution for personal health management. It features custom workout plans, diet tracking, and progress monitoring using AI.</p>
+              <a href="link_to_project_eventually" class="project-link">Learn More</a>
+          </div>
+      </div>
+    </section>
+
+    <!--best Skills-->
+    <section id="quick-skills">
+      <h2>Most Proficient Languages</h2>
+      <ul class="skills-list">
+          <li>Swift</li>
+          <li>C++</li>
+          <li>Java</li>
+          <li>HTML/CSS</li>
+      </ul>
+    </section>
+
+  <!-- contact form -->
+  <div id="contact">
+    <div class="row">
+      <div class="contact-left">
+        <h2 class="sub-title2">Contact Me</h2>
+        <p><span class="fa-solid fa-envelope" aria-hidden="true"></span>cbstoebe@gmail.com</p>
+        <p><span class="fa-sharp fa-solid fa-phone" aria-hidden="true"></span>714-883-1507</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/robin.renaissance/" aria-label="Instagram"><span class="fa-brands fa-instagram" aria-hidden="true"></span></a>
+          <a href="https://www.linkedin.com/in/robin-stoebe/" aria-label="LinkedIn"><span class="fa-brands fa-linkedin" aria-hidden="true"></span></a>
+          <a href="https://github.com/robin-stoebe" aria-label="GitHub"><span class="fa-brands fa-github" aria-hidden="true"></span></a>
+        </div>
+        <a href="/Users/gothyfox/Downloads/Portfolio-pics/Stoebe.Resume.pdf" download class="btn btn2">Download Resume</a>
+      </div>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <label for="nameInput">Your Name</label>
+          <input id="nameInput" type="text" name="Name" placeholder="Name" required>
+          
+          <label for="emailInput">Your Email</label>
+          <input id="emailInput" type="email" name="Email" placeholder="Email" required>
+          
+          <label for="messageInput">Your Message</label>
+          <textarea id="messageInput" name="Message" rows="6" placeholder="Message"></textarea>
+          
+          <button type="submit" class="btn btn2">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //contact form
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyOso1emifgUqNRPjuvVrA_WRyMXVYdYJc9b335zIsrzQUymcMyzIIfgcVzOnbehu22Og/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Message sent successfully"
+          setTimeout(function(){
+            msg.innerHTML=""
+          },5000)
+          form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+      })
+  </script>
+  <script> 
+    document.addEventListener('DOMContentLoaded', (event) => {
+    var sidemenu = document.getElementById("sidemenu");
+    var menuButton = document.querySelector('.fa-bars');
+    var closeButton = document.querySelector('.fa-circle-xmark');
+    closeButton.style.display = 'none';
+
+    function openmenu() {
+        sidemenu.style.right = "0";
+        menuButton.style.display = 'none';
+        closeButton.style.display = 'block';}
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+        menuButton.style.display = 'block'; 
+        closeButton.style.display = 'none'; 
+      }
+    menuButton.addEventListener('click', openmenu);
+    closeButton.addEventListener('click', closemenu);
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="author" content="Robin Stoebe">
+    <meta name="description" content="Portfolio for Robin Stoebe">
+    <title>About | Robin Stoebe</title>
+     <!-- you would link to an external stylesheet here! -->
+     <script src="https://kit.fontawesome.com/b3a6d5b734.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="styles.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet">
+     <!-- you would also link to Bootstrap here! -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "viewport" content = "width-device-width, initial-scale = 1.0">
+    <meta name = "robots" content = "index, follow">
+    <meta name = "googlebot" content = "index, follow">
+    <meta property ="og:title" content = "About | Robin">
+    <meta property = "og:type" content = "website">
+    <meta property = "og:url" content = "https://www.robinstoebe.com/about/">
+</head>
+<body class="container">
+    <br><br><br>
+    <header>
+        <nav id = "top-bar">
+            <img src = "/Users/gothyfox/Downloads/Portfolio-pics/RLogo.png" class = "logo" alt = "Robin's Logo">
+            <ul id = "sidemenu">
+              <li><a href = "index.html"> Home </a></li>
+              <li><a href = "about.html"> About Me </a></li>
+              <li><a href = "projects.html"> Projects </a></li>
+            </ul>
+            <button aria-label="Close menu" class="icon-button" onclick="closemenu()">
+                <span role="img" aria-hidden="true" class="fa-solid fa-circle-xmark"></span>
+            </button>
+            <button aria-label="Open menu" class="icon-button" onclick="openmenu()">
+                <span role="img" aria-hidden="true" class="fa-solid fa-bars"></span>
+            </button>
+        </nav>
+    </header>
+
+<main>
+   <div id = "about">
+        <div class = "row">
+            <div class = "about-col-1">
+                <img src = "/Users/gothyfox/Downloads/Portfolio-pics/ucirainypfp.jpg" alt = "Picture of Robin infront of a pretty post-rain background">
+                <img src = "/Users/gothyfox/Downloads/Portfolio-pics/wingspfp.jpg" alt = "Photo of Robin posing infront of a wing'd mural">
+            </div>
+        <div class = "about-col-2">
+            <h1 class = "sub-title"> About Me </h1>
+            <p style ="line-height: 1.5">
+                ʕ•́ᴥ•̀ʔっ Hihi! Welcome to my special main description of myself ʕ•́ᴥ•̀ʔっ <br>
+                As you might've heard, my name is Robin Stoebe; I'm non-binary and use they/them pronouns!
+                Currently, I'm a 3rd year at UC Irvine studying Software Engineering. <br>
+                <br>
+                My time at Fullerton College was pretty fufilling, I started for their Volleyball team both years I was there, did volunteer work at their food bank, and graduated with honors!
+                Speaking of Volleyball! I played for ten consecutive years until I finally took a break after community college. <br>
+                <br>
+                Right now, I'm focused on getting a 2024 internship to kickstart my career in UI/UX development.
+            </p>
+
+            <div class = "tab-titles">
+                <p class = "tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class = "tab-links" onclick="opentab('experience')">Experience</p>
+                <p class = "tab-links" onclick="opentab('education')">Education</p>
+                <p class = "tab-links" onclick="opentab('interest')">Interest</p>
+            </div>
+            <div class = "tab-contents active-tab" id = "skills">
+                <ul>
+                    <li><span>Proficient Languages</span><br>Swift, C++, Java, HTML/CSS</li>
+                    <li><span>Familiar Languages</span><br>C#, C, R, Javascript, SQL, Python</li>
+                    <li><span>Tools</span><br>XCode, Unity, Unreal, Jupyter Notebook, Git, Godot</li>
+                </ul>
+            </div>
+            <div class = "tab-contents" id = "experience">
+                <ul>
+                    <li><span>Summer 2024</span><br>Hopefully an SWE Internship!</li>
+                    <li><span>October 2023 - Present</span><br>Bren Events Center Operations Crew Member</li>
+                    <li><span>August 2020 - April 2023</span><br>Special Education Academic Tutor</li>
+                </ul>
+            </div>
+            <div class = "tab-contents" id = "education">
+                <ul>
+                    <li><span>2025</span><br> B.S. in Software Engineering from UCI</li>
+                    <li><span>2023</span><br> A.S. in Computer Science from Fullerton College</li>
+                    <li><span>2021</span><br> Graduated from John F. Kennedy High School</li>
+                </ul>
+            </div> 
+            <div class = "tab-contents" id = "interest">
+                <ul>
+                    <li><span>Shows</span><br> <br>Jojo's Bizzare Adventure<br>Howl's Moving Castle<br>Hunter x Hunter<br>Demon Slayer
+                        <br>Vivi Flourecent Eyes Song <br>Spy X Family</li>
+                    <li><span>Video Games</span><br>Destiny 2 <br> Pokemon <br> Baldurs Gate 3 <br> Persona </li>
+                    <li><span>Physical Activities</span><br>Volleyball<br>Rock Climbing<br>Ice Skating<br> Tennis</li>
+                </ul>
+            </div> 
+        </div>
+        </div>
+   </div>
+</main>
+
+   <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link")
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var sidemenu = document.getElementById("sidemenu");
+            var menuButton = document.querySelector('.fa-bars');
+            var closeButton = document.querySelector('.fa-circle-xmark');
+            closeButton.style.display = 'none';
+    
+            function openmenu() {
+                sidemenu.style.right = "0";
+                menuButton.style.display = 'none';
+                closeButton.style.display = 'block';}
+            function closemenu() {
+                sidemenu.style.right = "-200px";
+                menuButton.style.display = 'block'; 
+                closeButton.style.display = 'none'; 
+            }
+        menuButton.addEventListener('click', openmenu);
+        closeButton.addEventListener('click', closemenu);
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <meta name="author" content="Robin Stoebe">
+    <meta name="description" content="Portfolio for Robin Stoebe">
+     <!-- you would link to an external stylesheet here! -->
+     <script src="https://kit.fontawesome.com/b3a6d5b734.js" crossorigin="anonymous"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+     <!-- you would also link to Bootstrap here! -->
+     <script src="scripts.js" defer></script>
+    <meta name = "viewport" content = "width-device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+    <title>Projects | Robin Stoebe</title>
+
+  <meta name = "robots" content = "index, follow">
+  <meta name = "googlebot" content = "index, follow">
+  <meta property ="og:title" content = "About | Robin">
+  <meta property = "og:type" content = "website">
+  <meta property = "og:url" content = "https://www.robinstoebe.com/projects/">
+</head>  
+
+<body class = "container">
+    <br><br><br><br><br>
+    <header>
+        <nav id = "top-bar">
+            <img src = "/Users/gothyfox/Downloads/Portfolio-pics/RLogo.png" class = "logo" alt = "Robin's Logo">
+            <ul id = "sidemenu">
+              <li><a href = "index.html"> Home </a></li>
+              <li><a href = "about.html"> About Me </a></li>
+              <li><a href = "projects.html"> Projects </a></li>
+            </ul>
+            <button aria-label="Close menu" class="icon-button" onclick="closemenu()">
+                <span role="img" aria-hidden="true" class="fa-solid fa-circle-xmark"></span>
+            </button>
+            <button aria-label="Open menu" class="icon-button" onclick="openmenu()">
+                <span role="img" aria-hidden="true" class="fa-solid fa-bars"></span>
+            </button>
+        </nav>
+    </header>
+
+
+    <main>
+        <section id = "Portfolio">
+            <h2 class = "sub-title2"> My Work</h2>
+            <div class ="work-list">
+
+                <div class="work">
+                    <img src = "/Users/gothyfox/Downloads/Portfolio-pics/password-temp-pic.jpeg" alt="Password Generator Preview">
+                    <div class = "layer">
+                        <h3> Password Generator Website </h3>
+                        <p> This quick project implements a script to generate secure passwords. 
+                             It includes encryption based on user-selected paramaters for enhanced security. </p>
+                             <a href="#" aria-label="Learn more about Password Generator Website">
+                                <span role="img" aria-hidden="true" class="fas fa-external-link-alt"></span>
+                            </a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src = "/Users/gothyfox/Downloads/Portfolio-pics/fitness-photo-temp.jpeg" alt="Picture of a strong women outline flexing">
+                    <div class = "layer">
+                        <h3> Fitness-Free IOS App</h3>
+                        <p> This is my main project that I've been working on since summer.
+                            Still not done yet! </p>
+                        <a href="#" aria-label="Learn more about Password Generator Website">
+                            <span role="img" aria-hidden="true" class="fas fa-external-link-alt"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src = "/Users/gothyfox/Downloads/Portfolio-pics/temp-silly-photo.jpeg" alt="Picture of barbie infront of a flaming car">
+                    <div class = "layer">
+                        <h3> Text Processor </h3>
+                        <p> This is a python project done for a class that isn't finished yet! Once done, I will update on friday </p>
+                        <a href="#" aria-label="Learn more about Password Generator Website">
+                            <span role="img" aria-hidden="true" class="fas fa-external-link-alt"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--
+    <a href="#" class = "btn">See more</a>
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var sidemenu = document.getElementById("sidemenu");
+            var menuButton = document.querySelector('.fa-bars');
+            var closeButton = document.querySelector('.fa-circle-xmark');
+            closeButton.style.display = 'none';
+    
+            function openmenu() {
+                sidemenu.style.right = "0";
+                menuButton.style.display = 'none';
+                closeButton.style.display = 'block';}
+
+            function closemenu() {
+            sidemenu.style.right = "-200px";
+            menuButton.style.display = 'block'; 
+            closeButton.style.display = 'none'; 
+            }
+
+            menuButton.addEventListener('click', openmenu);
+            closeButton.addEventListener('click', closemenu);
+            });
+    </script>
+</body>
+</html>
